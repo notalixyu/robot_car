@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotic Patrolling Car Control Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+<h1>Robot Surveillance Dashboard</h1>
+
+<!-- Real-Time Video Feed -->
+<div class="video-container">
+    <h2>Real-Time Video Feed</h2>
+    <div id="video-feed">Video Placeholder</div>
+</div>
+
+<!-- Control Buttons -->
+<div class="controls">
+    <h2>Control Robot</h2>
+    <button onclick="moveRobot('forward')">⬆ Forward</button>
+    <br>
+    <button onclick="moveRobot('left')">⬅ Left</button>
+    <button onclick="moveRobot('stop')">⏹ Stop</button>
+    <button onclick="moveRobot('right')">➡ Right</button>
+    <br>
+    <button onclick="moveRobot('backward')">⬇ Backward</button>
+</div>
+
+<!-- Movement Logs -->
+<div class="logs">
+    <h2>Movement Logs</h2>
+    <ul id="log-list"></ul>
+</div>
+
+<!-- Alerts -->
+<div class="alerts">
+    <h2>Object Detection Alerts</h2>
+    <ul id="alert-list"></ul>
+</div>
+
+<!-- Real-Time Map -->
+<div class="map-container">
+    <h2>Robotic Cars Location</h2>
+    <div id="map"></div>
+</div>
+
+<!-- Sensor Data -->
+<div class="sensor-dashboard">
+    <h2>Sensor Data</h2>
+    <canvas id="sensorChart"></canvas>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
