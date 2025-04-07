@@ -1,4 +1,4 @@
-// Implement Robots Movement (Logs)
+//implement robots movement logs
 function moveRobot(direction) {
     const logList = document.getElementById("log-list");
     const logEntry = document.createElement("li");
@@ -6,7 +6,7 @@ function moveRobot(direction) {
     logList.appendChild(logEntry);
 }
 
-// Implement Random Alerts (5-10 seconds)
+//implement random alerts (5-10 seconds)
 function generateAlerts() {
     const alertList = document.getElementById("alert-list");
     const objects = ["Person Detected!", "Vehicle Detected!", "Motion Detected!"];
@@ -20,9 +20,9 @@ function generateAlerts() {
     }, Math.random() * 5000 + 5000);
 }
 
-// Initialize Map with Fake GPS Data
+//initialise map with API GPS data
 function initMap() {
-    const map = L.map("map").setView([53.8008, -1.5491], 15); // Leeds, UK (Mock Location)
+    const map = L.map("map").setView([53.8008, -1.5491], 15); // Leeds, UK (mock location)
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
@@ -30,7 +30,7 @@ function initMap() {
     marker.bindPopup("Robot's Current Location").openPopup();
 }
 
-// Generate Fake Sensor Data (Chart.js)
+//generate mock sensor data chart.js
 function generateSensorChart() {
     const ctx = document.getElementById("sensorChart").getContext("2d");
 
@@ -59,7 +59,7 @@ function generateSensorChart() {
         },
     });
 
-    // Implement Sensor Data Updates
+    //implement sensor data updates
     setInterval(() => {
         if (sensorChart.data.labels.length > 10) {
             sensorChart.data.labels.shift();
@@ -67,14 +67,14 @@ function generateSensorChart() {
         }
 
         sensorChart.data.labels.push(new Date().toLocaleTimeString());
-        sensorChart.data.datasets[0].data.push(Math.floor(Math.random() * 100)); // Battery
-        sensorChart.data.datasets[1].data.push((Math.random() * 2).toFixed(2)); // Distance
+        sensorChart.data.datasets[0].data.push(Math.floor(Math.random() * 100)); //battery
+        sensorChart.data.datasets[1].data.push((Math.random() * 2).toFixed(2)); //distance
 
         sensorChart.update();
     }, 2000);
 }
 
-// Run Simulations
+//run simulations
 generateAlerts();
 initMap();
 generateSensorChart();
